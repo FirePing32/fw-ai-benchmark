@@ -241,9 +241,9 @@ class BaseProvider(abc.ABC):
 class OpenAIProvider(BaseProvider):
     def get_url(self):
         if self.parsed_options.chat:
-            return "/v1/chat/completions"
+            return "/chat/completions"
         else:
-            return "/v1/completions"
+            return "/completions"
 
     def format_payload(self, prompt, max_tokens, images):
         data = {
